@@ -1,0 +1,53 @@
+[
+	{
+		"title": "Main",
+		"groupTitle": true
+	},
+	{
+		"title": "Dashboards",
+		"icon": "icofont-ui-home",
+    "badge": "4",
+    "badgeView": "info",
+		"sub": [
+			{
+				"title": "Default",
+				"routing": "default-dashboard"
+			}
+			
+			,
+			{
+				"title": "Analytical",
+				"routing": "analytical-dashboard"
+			}
+			
+			
+		]
+	},
+	
+	{
+		"title": "Tables",
+		"icon": "icofont-table",
+		"sub": [
+			{
+				"title": "Simple Tables",
+				"routing": "simple-tables"
+			},
+			{
+				"title": "Filter Table",
+				"routing": "filter-table"
+			},
+			{
+				"title": "Sorting Table",
+				"routing": "sorting-table"
+			},
+			{
+				"title": "Search Table",
+				"routing": "search-table"
+			},
+			{
+				"title": "Pagination Table",
+				"routing": "pagination-table"
+			}
+		]
+	}
+]
