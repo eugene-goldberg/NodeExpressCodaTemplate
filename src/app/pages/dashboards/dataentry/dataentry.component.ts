@@ -22,6 +22,10 @@ export class PageDataentryComponent implements OnInit {
       this.pipeline.program_name = customerForm.value.programName;
       this.pipeline.application_name = customerForm.value.applicationName;
       this.pipeline.application_component_name = customerForm.value.applicationComponentName;
+      this.pipeline.hosting_model = customerForm.value.hostingModel;
+      this.pipeline.environment = customerForm.value.environment;
+      this.pipeline.pipeline_name = customerForm.value.pipelineName;
+      this.pipeline.pipeline_type = customerForm.value.pipelineType;
       this.dataService.addDevopsPipeline(this.pipeline);
       console.log('Saved: ' + JSON.stringify(customerForm.value));
     }

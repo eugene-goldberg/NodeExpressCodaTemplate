@@ -6,24 +6,20 @@
   
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
-                 for="firstNameId">Company Name</label>
+                 for="companyName">Company Name</label>
           <div class="col-md-8">
             <input class="form-control"
                    style="width: 100%;"
-                   id="firstNameId"
+                   id="companyName"
                    type="text"
-                   placeholder="Company (required)"
+                   placeholder="84.51 / Kroger"
                    required
                    minlength="3"
                    [(ngModel)]=pipeline.companyName
                    name="companyName"
-                   #firstNameVar="ngModel"
-                   [ngClass]="{'is-invalid': (firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid }" />
+                    />
             <span class="invalid-feedback">
-              <!-- <span *ngIf="firstNameVar.errors?.required">
-                Please enter your first name.
-              </span> -->
-              <span *ngIf="firstNameVar.errors?.minlength">
+              <span>
                 The first name must be longer than 3 characters.
               </span>
             </span>
@@ -32,24 +28,20 @@
   
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
-                 for="lastNameId">Program Name</label>
+                 for="programName">Program Name</label>
           <div class="col-md-8">
             <input class="form-control"
                    style="width: 100%;"
-                   id="lastNameId"
+                   id="programName"
                    type="text"
-                   placeholder="Program (required)"
+                   placeholder="Data Foundations / Comms / Inisghts / Merch"
                    required
                    maxlength="50"
                    [(ngModel)]="pipeline.programName"
                    name="programName"
-                   #lastNameVar="ngModel"
-                   [ngClass]="{'is-invalid': (lastNameVar.touched || lastNameVar.dirty) && !lastNameVar.valid }" />
+                  />
             <span class="invalid-feedback">
-              <!-- <span *ngIf="lastNameVar.errors?.required">
-                Please enter your last name.
-              </span> -->
-              <span *ngIf="lastNameVar.errors?.maxlength">
+              <span>
                 The last name must be less than 50 characters.
               </span>
             </span>
@@ -58,19 +50,17 @@
   
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
-                 for="emailId">Application Name</label>
+                 for="applicationName">Application Name</label>
           <div class="col-md-8">
             <input class="form-control"
                    style="width: 100%;"
-                   id="emailId"
-                   type="email"
-                   placeholder="Application (required)"
+                   id="applicationName"
+                   type="text"
+                   placeholder="Application "
                    required
-                   email
                    [(ngModel)]="pipeline.applicationName"
                    name="applicationName"
-                   #emailVar="ngModel"
-                   [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid }" />
+                    />
             <span class="invalid-feedback">
             </span>
           </div>
@@ -78,19 +68,89 @@
 
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
-                 for="emailId">Application Component Name</label>
+                 for="applicationComponent">Application Component Name</label>
           <div class="col-md-8">
             <input class="form-control"
                    style="width: 100%;"
-                   id="emailId"
-                   type="email"
-                   placeholder="Application Component Name(required)"
+                   id="applicationComponent"
+                   type="text"
+                   placeholder="i.e. data service component"
                    required
-                   email
                    [(ngModel)]="pipeline.applicationComponentName"
                    name="applicationComponentName"
-                   #emailVar="ngModel"
-                   [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid }" />
+                    />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="hostingModel">Hosting Model</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="hostingModel"
+                   type="text"
+                   placeholder="Cloud / On-Prem / Hybrid"
+                   required
+                   [(ngModel)]="pipeline.hostingModel"
+                   name="hostingModel"
+                    />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="environment">Environment</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="environment"
+                   type="text"
+                   placeholder="Dev / Stage / Prod"
+                   required
+                   [(ngModel)]="pipeline.environment"
+                   name="environment"
+                    />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="pipelineName">Pipeline Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="pipelineName"
+                   type="text"
+                   placeholder="i.e. Dev build pipeline"
+                   required
+                   [(ngModel)]="pipeline.pipelineName"
+                   name="pipelineName"
+                  />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="pipelineType">Pipeline Type</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="pipelineType"
+                   type="text"
+                   placeholder="Build / Deploy / Test"
+                   required
+                   [(ngModel)]="pipeline.pipelineType"
+                   name="pipelineType"
+                   />
             <span class="invalid-feedback">
             </span>
           </div>
