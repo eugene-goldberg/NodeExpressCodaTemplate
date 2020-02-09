@@ -1,0 +1,112 @@
+<div class="card">
+    <div class="card-body">
+      <form novalidate
+            (ngSubmit)="save(signupForm)"
+            #signupForm="ngForm">
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="firstNameId">Company Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="firstNameId"
+                   type="text"
+                   placeholder="Company (required)"
+                   required
+                   minlength="3"
+                   [(ngModel)]=pipeline.companyName
+                   name="companyName"
+                   #firstNameVar="ngModel"
+                   [ngClass]="{'is-invalid': (firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid }" />
+            <span class="invalid-feedback">
+              <!-- <span *ngIf="firstNameVar.errors?.required">
+                Please enter your first name.
+              </span> -->
+              <span *ngIf="firstNameVar.errors?.minlength">
+                The first name must be longer than 3 characters.
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="lastNameId">Program Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="lastNameId"
+                   type="text"
+                   placeholder="Program (required)"
+                   required
+                   maxlength="50"
+                   [(ngModel)]="pipeline.programName"
+                   name="programName"
+                   #lastNameVar="ngModel"
+                   [ngClass]="{'is-invalid': (lastNameVar.touched || lastNameVar.dirty) && !lastNameVar.valid }" />
+            <span class="invalid-feedback">
+              <!-- <span *ngIf="lastNameVar.errors?.required">
+                Please enter your last name.
+              </span> -->
+              <span *ngIf="lastNameVar.errors?.maxlength">
+                The last name must be less than 50 characters.
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="emailId">Application Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="emailId"
+                   type="email"
+                   placeholder="Application (required)"
+                   required
+                   email
+                   [(ngModel)]="pipeline.applicationName"
+                   name="applicationName"
+                   #emailVar="ngModel"
+                   [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid }" />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div> 
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="emailId">Application Component Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="emailId"
+                   type="email"
+                   placeholder="Application Component Name(required)"
+                   required
+                   email
+                   [(ngModel)]="pipeline.applicationComponentName"
+                   name="applicationComponentName"
+                   #emailVar="ngModel"
+                   [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid }" />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button class="btn btn-primary mr-3"
+                    type="submit"
+                    style="width:80px"
+                    [title]="signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                    >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>

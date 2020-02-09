@@ -68,6 +68,7 @@ import { PageRatingsComponent } from './ui/ratings/ratings.component';
 import { PageDropdownsComponent } from './ui/dropdowns';
 import { PageTravelComponent } from './dashboards/travel';
 import { PageFormWizardComponent } from './forms/form-wizard';
+import { PageDataentryComponent } from './dashboards/dataentry';
 
 @NgModule({
   imports: [
@@ -139,6 +140,7 @@ import { PageFormWizardComponent } from './forms/form-wizard';
     PageIconsComponent,
     PageDefaultComponent,
     PageAnalyticalComponent,
+    PageDataentryComponent,
     PageFinancialComponent,
     PageSlidersComponent,
 		PageNotificationsComponent,

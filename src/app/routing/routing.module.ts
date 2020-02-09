@@ -52,6 +52,7 @@ import { PageFormValidationComponent } from '../pages/forms/form-validation';
 import { PageIconsComponent } from '../pages/icons';
 import { PageDefaultComponent } from '../pages/dashboards/default';
 import { PageAnalyticalComponent } from '../pages/dashboards/analytical';
+import { PageDataentryComponent } from '../pages/dashboards/dataentry';
 import { PageFinancialComponent } from '../pages/dashboards/financial';
 import { PageSlidersComponent } from '../pages/ui/sliders';
 import { PageNotificationsComponent } from '../pages/ui/notifications';
@@ -66,6 +67,7 @@ const DEFAULT_ROUTES: Routes = [
   { path: '', component: PageDefaultComponent },
   { path: 'default-dashboard', component: PageDefaultComponent },
   { path: 'analytical-dashboard', component: PageAnalyticalComponent },
+  { path: 'dataentry', component: PageDataentryComponent },
   { path: 'financial-dashboard', component: PageFinancialComponent },
   { path: 'users', component: PageUsersComponent },
   { path: 'filter-table', component: PageFilterTableComponent },

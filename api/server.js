@@ -6,6 +6,8 @@ const express = require('express'),
     config = require('./DB');
 
 const businessRoute = require('./routes/business.route');
+const pipelineRoute = require('./routes/devopspipeline.route');
+
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
@@ -23,6 +25,15 @@ app.get('/getversion',function(req,res){
   res.status(200).json({version:version})
 });
 app.use('/business', businessRoute);
+
+app.use('/pipelines', pipelineRoute);
+
+// app.post('/pipelines', (req, res) => {
+  
+//   const requestBody = req.body;
+//   const rb = requestBody;
+//   return res.status(201);
+// });
 
 app.use('/',function(req,res){
   res.sendFile(path.join(__dirname,'../dist/angular7crud','index.html'))

@@ -19,7 +19,11 @@
 				"title": "Analytical",
 				"routing": "analytical-dashboard"
 			}
-			
+			,
+			{
+				"title": "Data Entry",
+				"routing": "dataentry"
+			}
 			
 		]
 	},
