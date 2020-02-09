@@ -10,6 +10,7 @@ import { DevopsPipeline } from './pipeline';
 })
 export class PageDataentryComponent implements OnInit {
     pipeline = new DevopsPipeline(null, null, null, null, null, null, null, null);
+    dataentry = {devopsPipeline: false};
 
     constructor(public dataService: DataService) { }
 
