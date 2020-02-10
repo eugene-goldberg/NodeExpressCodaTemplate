@@ -20,7 +20,7 @@
       <form novalidate
             (ngSubmit)="save(signupForm)"
             #signupForm="ngForm">
-  
+
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
                  for="companyName">Company Name</label>
@@ -32,14 +32,14 @@
                    placeholder="84.51 / Kroger"
                    required
                    minlength="3"
-                   [(ngModel)]=pipeline.companyName
+                   [(ngModel)]="pipeline.company_name"
                    name="companyName"
                     />
             <span class="invalid-feedback">
             </span>
           </div>
         </div>
-  
+
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
                  for="programName">Program Name</label>
@@ -51,14 +51,14 @@
                    placeholder="Data Foundations / Comms / Inisghts / Merch"
                    required
                    maxlength="50"
-                   [(ngModel)]="pipeline.programName"
+                   [(ngModel)]="pipeline.program_name"
                    name="programName"
                   />
             <span class="invalid-feedback">
             </span>
           </div>
         </div>
-  
+
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
                  for="applicationName">Application Name</label>
@@ -69,13 +69,13 @@
                    type="text"
                    placeholder="Application "
                    required
-                   [(ngModel)]="pipeline.applicationName"
+                   [(ngModel)]="pipeline.application_name"
                    name="applicationName"
                     />
             <span class="invalid-feedback">
             </span>
           </div>
-        </div> 
+        </div>
 
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
@@ -87,7 +87,7 @@
                    type="text"
                    placeholder="i.e. data service component"
                    required
-                   [(ngModel)]="pipeline.applicationComponentName"
+                   [(ngModel)]="pipeline.application_component_name"
                    name="applicationComponentName"
                     />
             <span class="invalid-feedback">
@@ -105,7 +105,7 @@
                    type="text"
                    placeholder="Cloud / On-Prem / Hybrid"
                    required
-                   [(ngModel)]="pipeline.hostingModel"
+                   [(ngModel)]="pipeline.hosting_model"
                    name="hostingModel"
                     />
             <span class="invalid-feedback">
@@ -141,7 +141,7 @@
                    type="text"
                    placeholder="i.e. Dev build pipeline"
                    required
-                   [(ngModel)]="pipeline.pipelineName"
+                   [(ngModel)]="pipeline.pipeline_name"
                    name="pipelineName"
                   />
             <span class="invalid-feedback">
@@ -159,14 +159,14 @@
                    type="text"
                    placeholder="Build / Deploy / Test"
                    required
-                   [(ngModel)]="pipeline.pipelineType"
+                   [(ngModel)]="pipeline.pipeline_type"
                    name="pipelineType"
                    />
             <span class="invalid-feedback">
             </span>
           </div>
         </div>
-  
+
         <div class="form-group row mb-2">
           <div class="offset-md-2 col-md-4">
             <button class="btn btn-primary mr-3"
