@@ -69,6 +69,7 @@ import { PageDropdownsComponent } from './ui/dropdowns';
 import { PageTravelComponent } from './dashboards/travel';
 import { PageFormWizardComponent } from './forms/form-wizard';
 import { PageDataentryComponent } from './dashboards/dataentry';
+import {CompanyDataentryComponent} from '../pages/forms/data-entry-forms/company-data-entry';
 
 @NgModule({
   imports: [
@@ -148,7 +149,8 @@ import { PageDataentryComponent } from './dashboards/dataentry';
 		PageRatingsComponent,
 		PageDropdownsComponent,
 		PageTravelComponent,
-		PageFormWizardComponent
+    PageFormWizardComponent,
+    CompanyDataentryComponent
   ]
 })
 export class PagesModule { }

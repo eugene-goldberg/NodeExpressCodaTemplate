@@ -12,8 +12,21 @@
       </div>
     </div>
   </div>
-</div>
 
+  <div class="form-group row mb-2">
+    <div class="col-md-8">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input"
+                 id="devopsCompanyShow"
+                 type="checkbox"
+                 [(ngModel)]="dataentry.showCompany"
+                 name="showCompany"> Company
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="card" *ngIf="dataentry.devopsPipeline">
     <div class="card-body">
@@ -180,4 +193,8 @@
         </div>
       </form>
     </div>
+</div>
+
+<div class="card" *ngIf="dataentry.showCompany">
+<company-dataentry></company-dataentry>
 </div>

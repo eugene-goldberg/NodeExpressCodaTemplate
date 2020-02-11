@@ -1,0 +1,42 @@
+    <div class="card-body">
+      <form novalidate
+            (ngSubmit)="save(signupForm)"
+            #signupForm="ngForm">
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="companyName">Company Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   style="width: 100%;"
+                   id="companyName"
+                   type="text"
+                   placeholder="84.51 / Kroger"
+                   required
+                   minlength="3"
+                   [(ngModel)]="company.company_name"
+                   name="companyName"
+                    />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+
+        
+
+
+        
+
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button class="btn btn-primary mr-3"
+                    type="submit"
+                    style="width:80px"
+                    [title]="signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                    >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>

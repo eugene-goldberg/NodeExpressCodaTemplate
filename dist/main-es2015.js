@@ -1,5 +1,28 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./api/models/company.js":
+/*!*******************************!*\
+  !*** ./api/models/company.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const mongoose = __webpack_require__(/*! mongoose */ "./node_modules/mongoose/dist/browser.umd.js");
+const Schema = mongoose.Schema;
+
+// Define collection and schema for Business
+let Company = new Schema({
+  company_name: {
+    type: String
+  }
+},{
+    collection: 'company'
+});
+
+module.exports = mongoose.model('Company', Company);
+
+/***/ }),
+
 /***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
 /*!**************************************************!*\
   !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
@@ -513,7 +536,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-12 col-md-6 col-xl-3\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class=\"form-group row mb-2\">\n    <div class=\"col-md-8\">\n      <div class=\"form-check\">\n        <label class=\"form-check-label\">\n          <input class=\"form-check-input\"\n                 id=\"devopsPipelineShow\"\n                 type=\"checkbox\"\n                 [(ngModel)]=\"dataentry.devopsPipeline\"\n                 name=\"devopsPipelineShow\"> Devops Pipelines\n        </label>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<div class=\"card\" *ngIf=\"dataentry.devopsPipeline\">\n    <div class=\"card-body\">\n      <form novalidate\n            (ngSubmit)=\"save(signupForm)\"\n            #signupForm=\"ngForm\">\n  \n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"companyName\">Company Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"companyName\"\n                   type=\"text\"\n                   placeholder=\"84.51 / Kroger\"\n                   required\n                   minlength=\"3\"\n                   [(ngModel)]=pipeline.companyName\n                   name=\"companyName\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n  \n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"programName\">Program Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"programName\"\n                   type=\"text\"\n                   placeholder=\"Data Foundations / Comms / Inisghts / Merch\"\n                   required\n                   maxlength=\"50\"\n                   [(ngModel)]=\"pipeline.programName\"\n                   name=\"programName\"\n                  />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n  \n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"applicationName\">Application Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"applicationName\"\n                   type=\"text\"\n                   placeholder=\"Application \"\n                   required\n                   [(ngModel)]=\"pipeline.applicationName\"\n                   name=\"applicationName\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div> \n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"applicationComponent\">Application Component Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"applicationComponent\"\n                   type=\"text\"\n                   placeholder=\"i.e. data service component\"\n                   required\n                   [(ngModel)]=\"pipeline.applicationComponentName\"\n                   name=\"applicationComponentName\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"hostingModel\">Hosting Model</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"hostingModel\"\n                   type=\"text\"\n                   placeholder=\"Cloud / On-Prem / Hybrid\"\n                   required\n                   [(ngModel)]=\"pipeline.hostingModel\"\n                   name=\"hostingModel\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"environment\">Environment</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"environment\"\n                   type=\"text\"\n                   placeholder=\"Dev / Stage / Prod\"\n                   required\n                   [(ngModel)]=\"pipeline.environment\"\n                   name=\"environment\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"pipelineName\">Pipeline Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"pipelineName\"\n                   type=\"text\"\n                   placeholder=\"i.e. Dev build pipeline\"\n                   required\n                   [(ngModel)]=\"pipeline.pipelineName\"\n                   name=\"pipelineName\"\n                  />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"pipelineType\">Pipeline Type</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"pipelineType\"\n                   type=\"text\"\n                   placeholder=\"Build / Deploy / Test\"\n                   required\n                   [(ngModel)]=\"pipeline.pipelineType\"\n                   name=\"pipelineType\"\n                   />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n  \n        <div class=\"form-group row mb-2\">\n          <div class=\"offset-md-2 col-md-4\">\n            <button class=\"btn btn-primary mr-3\"\n                    type=\"submit\"\n                    style=\"width:80px\"\n                    [title]=\"signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'\"\n                    >\n              Save\n            </button>\n          </div>\n        </div>\n      </form>\n    </div>\n</div>"
+module.exports = "<div>\n  <div class=\"form-group row mb-2\">\n    <div class=\"col-md-8\">\n      <div class=\"form-check\">\n        <label class=\"form-check-label\">\n          <input class=\"form-check-input\"\n                 id=\"devopsPipelineShow\"\n                 type=\"checkbox\"\n                 [(ngModel)]=\"dataentry.devopsPipeline\"\n                 name=\"devopsPipelineShow\"> Devops Pipelines\n        </label>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"card\" *ngIf=\"dataentry.devopsPipeline\">\n    <div class=\"card-body\">\n      <form novalidate\n            (ngSubmit)=\"save(signupForm)\"\n            #signupForm=\"ngForm\">\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"companyName\">Company Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"companyName\"\n                   type=\"text\"\n                   placeholder=\"84.51 / Kroger\"\n                   required\n                   minlength=\"3\"\n                   [(ngModel)]=\"pipeline.company_name\"\n                   name=\"companyName\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"programName\">Program Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"programName\"\n                   type=\"text\"\n                   placeholder=\"Data Foundations / Comms / Inisghts / Merch\"\n                   required\n                   maxlength=\"50\"\n                   [(ngModel)]=\"pipeline.program_name\"\n                   name=\"programName\"\n                  />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"applicationName\">Application Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"applicationName\"\n                   type=\"text\"\n                   placeholder=\"Application \"\n                   required\n                   [(ngModel)]=\"pipeline.application_name\"\n                   name=\"applicationName\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"applicationComponent\">Application Component Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"applicationComponent\"\n                   type=\"text\"\n                   placeholder=\"i.e. data service component\"\n                   required\n                   [(ngModel)]=\"pipeline.application_component_name\"\n                   name=\"applicationComponentName\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"hostingModel\">Hosting Model</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"hostingModel\"\n                   type=\"text\"\n                   placeholder=\"Cloud / On-Prem / Hybrid\"\n                   required\n                   [(ngModel)]=\"pipeline.hosting_model\"\n                   name=\"hostingModel\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"environment\">Environment</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"environment\"\n                   type=\"text\"\n                   placeholder=\"Dev / Stage / Prod\"\n                   required\n                   [(ngModel)]=\"pipeline.environment\"\n                   name=\"environment\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"pipelineName\">Pipeline Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"pipelineName\"\n                   type=\"text\"\n                   placeholder=\"i.e. Dev build pipeline\"\n                   required\n                   [(ngModel)]=\"pipeline.pipeline_name\"\n                   name=\"pipelineName\"\n                  />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"pipelineType\">Pipeline Type</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"pipelineType\"\n                   type=\"text\"\n                   placeholder=\"Build / Deploy / Test\"\n                   required\n                   [(ngModel)]=\"pipeline.pipeline_type\"\n                   name=\"pipelineType\"\n                   />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <div class=\"offset-md-2 col-md-4\">\n            <button class=\"btn btn-primary mr-3\"\n                    type=\"submit\"\n                    style=\"width:80px\"\n                    [title]=\"signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'\"\n                    >\n              Save\n            </button>\n          </div>\n        </div>\n      </form>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -591,6 +614,17 @@ module.exports = "<div class=\"container\">\n  <h1 class=\"title\"> 404</h1>\n\n
 /***/ (function(module, exports) {
 
 module.exports = "<tc-card\n\tclass=\"mb-0\"\n\t[align]=\"'center'\"\n\t[padding]=\"0\"\n\t[title]=\"'Create your account'\"\n\t[tcBgColor]=\"'rgba(255,255,255,0.2)'\"\n>\n\t<form class=\"sign-up-form mb-0\">\n\t\t<tc-form-group>\n\t\t\t<tc-input [placeholder]=\"'Email Adress'\"></tc-input>\n\t\t</tc-form-group>\n\n\t\t<tc-form-group>\n\t\t\t<tc-input [type]=\"'password'\" [placeholder]=\"'Password'\"></tc-input>\n\t\t</tc-form-group>\n\n\t\t<tc-form-group>\n\t\t\t<tc-input [type]=\"'password'\" [placeholder]=\"'Confirm Password'\"></tc-input>\n\t\t</tc-form-group>\n\n\t\t<tc-form-group>\n\t\t\t<tc-checkbox [style.width]=\"'100%'\">I have read <a href=\"#\" (click)=\"$event.preventDefault()\">terms and conditions </a></tc-checkbox>\n\t\t</tc-form-group>\n\n\t\t<button tc-button [block]=\"true\" [tcGradient]=\"['#061e38', '#0b4177']\" [routerLink]=\"['/']\">Sign up</button>\n\t</form>\n\n\t<div class=\"forgot-box\">\n\t\t<span class=\"mr-1\">Already have an account ?</span>\n\t\t<a href=\"#\" [routerLink]=\"['/extra/log-in']\" (click)=\"$event.preventDefault()\">Sign In</a>\n\t</div>\n</tc-card>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.html":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.html ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <div class=\"form-group row mb-2\">\n    <div class=\"col-md-8\">\n      <div class=\"form-check\">\n        <label class=\"form-check-label\">\n          <input class=\"form-check-input\"\n                 id=\"devopsPipelineShow\"\n                 type=\"checkbox\"\n                 [(ngModel)]=\"dataentry.devopsPipeline\"\n                 name=\"devopsPipelineShow\"> Company\n        </label>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"card\" *ngIf=\"dataentry.devopsPipeline\">\n    <div class=\"card-body\">\n      <form novalidate\n            (ngSubmit)=\"save(signupForm)\"\n            #signupForm=\"ngForm\">\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"companyName\">Company Name</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   style=\"width: 100%;\"\n                   id=\"companyName\"\n                   type=\"text\"\n                   placeholder=\"84.51 / Kroger\"\n                   required\n                   minlength=\"3\"\n                   [(ngModel)]=\"company.company_name\"\n                   name=\"companyName\"\n                    />\n            <span class=\"invalid-feedback\">\n            </span>\n          </div>\n        </div>\n\n        \n\n\n        \n\n        <div class=\"form-group row mb-2\">\n          <div class=\"offset-md-2 col-md-4\">\n            <button class=\"btn btn-primary mr-3\"\n                    type=\"submit\"\n                    style=\"width:80px\"\n                    [title]=\"signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'\"\n                    >\n              Save\n            </button>\n          </div>\n        </div>\n      </form>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1794,6 +1828,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_pages_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/pages.module */ "./src/app/pages/pages.module.ts");
 /* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./layout/layout.module */ "./src/app/layout/layout.module.ts");
 /* harmony import */ var _asymmetrik_ngx_leaflet__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @asymmetrik/ngx-leaflet */ "./node_modules/@asymmetrik/ngx-leaflet/dist/index.js");
+/* harmony import */ var _src_app_pages_forms_data_entry_forms_company_data_entry__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../src/app/pages/forms/data-entry-forms/company-data-entry */ "./src/app/pages/forms/data-entry-forms/company-data-entry/index.ts");
+
 
 
 
@@ -1834,7 +1870,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _layout_layout_module__WEBPACK_IMPORTED_MODULE_16__["LayoutModule"],
             _ui_ui_module__WEBPACK_IMPORTED_MODULE_14__["UIModule"],
             _pages_pages_module__WEBPACK_IMPORTED_MODULE_15__["PagesModule"],
-            _routing_routing_module__WEBPACK_IMPORTED_MODULE_13__["RoutingModule"]
+            _routing_routing_module__WEBPACK_IMPORTED_MODULE_13__["RoutingModule"],
+            _src_app_pages_forms_data_entry_forms_company_data_entry__WEBPACK_IMPORTED_MODULE_18__["CompanyDataentryComponent"]
         ],
         providers: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
@@ -5101,6 +5138,80 @@ PageSignUpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
 ], PageSignUpComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.scss":
+/*!****************************************************************************************!*\
+  !*** ./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.scss ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2Zvcm1zL2RhdGEtZW50cnktZm9ybXMvY29tcGFueS1kYXRhLWVudHJ5L2NvbXBhbnkuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: CompanyDataentryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompanyDataentryComponent", function() { return CompanyDataentryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _app_services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../app/services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _api_models_company__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../api/models/company */ "./api/models/company.js");
+/* harmony import */ var _api_models_company__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_api_models_company__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+let CompanyDataentryComponent = class CompanyDataentryComponent {
+    constructor(dataService) {
+        this.dataService = dataService;
+        this.company = new _api_models_company__WEBPACK_IMPORTED_MODULE_3__["Company"](null);
+    }
+    ngOnInit() {
+    }
+    save(customerForm) {
+        console.log(customerForm.form);
+        this.company.company_name = customerForm.value.companyName;
+        this.dataService.addDevopsPipeline(this.company);
+        console.log('Saved: ' + JSON.stringify(customerForm.value));
+    }
+};
+CompanyDataentryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'company-dataentry',
+        template: __webpack_require__(/*! raw-loader!./company.component.html */ "./node_modules/raw-loader/index.js!./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.html"),
+        styles: [__webpack_require__(/*! ./company.component.scss */ "./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]])
+], CompanyDataentryComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/forms/data-entry-forms/company-data-entry/index.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/pages/forms/data-entry-forms/company-data-entry/index.ts ***!
+  \**************************************************************************/
+/*! exports provided: CompanyDataentryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _company_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./company.component */ "./src/app/pages/forms/data-entry-forms/company-data-entry/company.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CompanyDataentryComponent", function() { return _company_component__WEBPACK_IMPORTED_MODULE_0__["CompanyDataentryComponent"]; });
+
 
 
 
