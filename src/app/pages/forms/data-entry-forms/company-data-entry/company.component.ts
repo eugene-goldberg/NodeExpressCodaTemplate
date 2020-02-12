@@ -19,7 +19,8 @@ export class CompanyDataentryComponent implements OnInit {
     save(customerForm: NgForm) {
       console.log(customerForm.form);
       this.company.company_name = customerForm.value.companyName;
-      //this.dataService.addDevopsPipeline(this.company);
-      console.log('Saved: ' + JSON.stringify(customerForm.value));
+      // this.dataService.addDevopsPipeline(this.company);
+      this.dataService.addCompany(this.company);
+      console.log('company data entry: ' + JSON.stringify(customerForm.value));
     }
 }

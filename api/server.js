@@ -7,6 +7,7 @@ const express = require('express'),
 
 const businessRoute = require('./routes/business.route');
 const pipelineRoute = require('./routes/devopspipeline.route');
+const companyRoute = require('./routes/company.route');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
@@ -27,6 +28,8 @@ app.get('/getversion',function(req,res){
 app.use('/business', businessRoute);
 
 app.use('/pipelines', pipelineRoute);
+
+app.use('/company', companyRoute);
 
 // app.post('/pipelines', (req, res) => {
   
